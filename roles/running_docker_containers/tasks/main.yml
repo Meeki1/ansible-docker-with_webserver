@@ -1,0 +1,4 @@
+---
+# tasks file for running_docker_containers
+- name: Up container with apache
+  shell: "docker run -d --name apache -v /var/www/html:/usr/local/apache2/htdocs/ -p 80:80 httpd:2.4"

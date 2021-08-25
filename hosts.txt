@@ -1,0 +1,2 @@
+[stading_servers]
+ubuntu1 ansible_host=172.31.28.172

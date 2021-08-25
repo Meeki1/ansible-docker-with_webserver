@@ -1,0 +1,9 @@
+---
+- name: simple web server
+  hosts: stading_servers
+  become: yes
+  
+  roles:
+  - installing_docker
+  - running_docker_containers
+
