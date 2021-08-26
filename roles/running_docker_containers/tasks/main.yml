@@ -1,10 +1,5 @@
 ---
 # tasks file for running_docker_containers
-- name: pull docker image
-  docker_image:
-    name: httpd
-    source: pull
-
 - name: Copy index.html in target hosts
   ansible.builtin.copy:
     src: /home/ubuntu/ansible/roles/running_docker_containers/files/index.html
