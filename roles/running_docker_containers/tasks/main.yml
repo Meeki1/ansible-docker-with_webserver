@@ -1,4 +1,9 @@
 ---
 # tasks file for running_docker_containers
+- name: pull docker image
+  docker_image:
+    name: httpd
+    source: pull
+
 - name: Up container with apache
-  shell: "docker run -d --name apache -v /var/www/html:/usr/local/apache2/htdocs/ -p 80:80 httpd:2.4"
+  shell: "docker run -dit --name my-apache-app -p 8080:80"
