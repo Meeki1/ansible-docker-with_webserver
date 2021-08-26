@@ -5,5 +5,10 @@
     name: httpd
     source: pull
 
+- name: Copy index.html in target hosts
+  ansible.builtin.copy:
+    src: /home/ubuntu/ansible/roles/running_docker_containers/files/index.html
+    dest: /var/www/html/index.html
+
 - name: Up container with apache
-  shell: "docker run -dit --name my-apache-app -p 8080:80"
+  shell: docker run -dit --name web -p 80:80 -v /var/www/html/:/usr/local/apache2/htdocs/ httpd:latest
